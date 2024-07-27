@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de QR Code pour vCard</title>
+    <link rel="stylesheet" href="css/vcard.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur de QR Code pour vCard</h1>
+        <form id="vcard-form" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom:</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="form-group">
+                <label for="telephone-professionnel">Téléphone professionnel (avec indicatif):</label>
+                <input type="tel" id="telephone-professionnel" name="telephone-professionnel" placeholder="+221712345678" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="website">Site web:</label>
+                <input type="url" id="website" name="website">
+            </div>
+            <div class="form-group">
+                <label for="adresse">Adresse:</label>
+                <textarea id="adresse" name="adresse" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="photo">Photo de profil:</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="whatsapp">Contact WhatsApp (avec indicatif):</label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="+221612345678">
+            </div>
+            <div id="social-media-container">
+                <label>Réseaux sociaux:</label>
+            </div>
+            <button type="button" id="add-social">Ajouter un réseau social</button>
+            <button type="submit">Générer QR Code</button>
+        </form>
+        <div id="qrcode"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="js/vcard.js"></script>
+</body>
+</html>
